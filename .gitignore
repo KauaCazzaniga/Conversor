@@ -1,0 +1,10 @@
+.env
+node_modules/
+.idea/
+*.log
+.DS_Store
+
+dados_estruturados/
+manuais_concluidos/
+manuais_pendentes/
+textos_brutos/
