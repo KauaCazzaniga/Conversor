@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             // Caso 3: Ambos vazios
             else {
-                resDiv.innerHTML = "<div class='mensagem'>⚠️ Por favor, informe um código de erro ou selecione uma marca específica para refinar a busca.</div>";
+                resDiv.innerHTML = "<div class='mensagem'>⚠ Por favor, informe um código de erro ou selecione uma marca específica para refinar a busca.</div>";
                 inputCodigo.focus();
                 return;
             }

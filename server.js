@@ -18,9 +18,9 @@ app.use(express.json()); // Permite que a API entenda requisições no formato J
 // 2. CONEXÃO COM O BANCO E MODELO
 // ==========================================
 mongoose.connect(URI_BANCO)
-    .then(() => console.log('✅ Conectado ao MongoDB Atlas!'))
+    .then(() => console.log(' Conectado ao MongoDB Atlas!'))
     .catch(err => {
-        console.error('❌ Erro ao conectar no banco:', err.message);
+        console.error(' Erro ao conectar no banco:', err.message);
         process.exit(1);
     });
 
@@ -39,7 +39,7 @@ const ErroModelo = mongoose.model('Erro', esquemaErro);
 
 // Rota 1: Rota de teste para ver se a API está online
 app.get('/', (req, res) => {
-    res.json({ mensagem: 'API de Erros de Impressoras Online e Operante! 🖨️' });
+    res.json({ mensagem: 'API de Erros de Impressoras Online e Operante! ️' });
 });
 
 // Rota 2: Buscar TODOS os erros (Limitado a 50 para não travar o navegador)
@@ -87,6 +87,6 @@ app.get('/api/erros/marca/:nomeMarca', async (req, res) => {
 // 4. LIGAR O SERVIDOR
 // ==========================================
 app.listen(PORTA, () => {
-    console.log(`\n🚀 Servidor rodando na porta ${PORTA}`);
-    console.log(`👉 Teste no navegador: http://localhost:${PORTA}/api/erros`);
+    console.log(`\n Servidor rodando na porta ${PORTA}`);
+    console.log(` Teste no navegador: http://localhost:${PORTA}/api/erros`);
 });

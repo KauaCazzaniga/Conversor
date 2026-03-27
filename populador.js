@@ -64,16 +64,16 @@ async function injetarDados() {
         }
 
         console.log("\n=================================================");
-        console.log(`🏁 CARGA FINALIZADA COM SUCESSO!`);
-        console.log(`📊 Total de novos erros cadastrados: ${totalErrosInseridos}`);
+        console.log(` CARGA FINALIZADA COM SUCESSO!`);
+        console.log(` Total de novos erros cadastrados: ${totalErrosInseridos}`);
         console.log("=================================================");
 
     } catch (erro) {
-        console.error("\n❌ Falha crítica durante a injeção de dados:");
+        console.error("\n Falha crítica durante a injeção de dados:");
         console.error(erro.message);
     } finally {
         await mongoose.disconnect();
-        console.log("🔌 Conexão com o banco de dados encerrada.");
+        console.log(" Conexão com o banco de dados encerrada.");
         process.exit(0);
     }
 }

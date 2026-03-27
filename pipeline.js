@@ -82,11 +82,11 @@ async function iniciarPipeline() {
         const caminhoConcluido = path.join(DIRETORIO_CONCLUIDOS, arquivo);
 
         if (fs.existsSync(caminhoJson)) {
-            console.log(`✅ Já foi extraído antes.`);
+            console.log(` Já foi extraído antes.`);
             // Se o JSON existe, mas o PDF continua nos pendentes, ele move agora
             if (fs.existsSync(caminhoPdf)) {
                 fs.renameSync(caminhoPdf, caminhoConcluido);
-                console.log(`   📦 Movido para concluídos.`);
+                console.log(`    Movido para concluídos.`);
             }
             continue;
         }
@@ -98,13 +98,13 @@ async function iniciarPipeline() {
             // Move o arquivo PDF para a pasta de concluídos após o sucesso
             fs.renameSync(caminhoPdf, caminhoConcluido);
 
-            console.log(`✅ Sucesso final: JSON criado e PDF movido para manuais_concluidos.`);
+            console.log(` Sucesso final: JSON criado e PDF movido para manuais_concluidos.`);
             await aguardar(4000);
         } catch (e) {
-            console.error(`❌ Erro no arquivo ${arquivo}: ${e.message}`);
+            console.error(` Erro no arquivo ${arquivo}: ${e.message}`);
         }
     }
-    console.log("\n🏁 Fim da fila!");
+    console.log("\n Fim da fila!");
 }
 
 iniciarPipeline();
