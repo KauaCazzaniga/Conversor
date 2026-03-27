@@ -1,0 +1,332 @@
+/* ==========================================
+   DEFINIÇÕES DE CORES TECHUB (image_5.png)
+   ========================================== */
+:root {
+    --bg-deep: #050505;       /* Preto profundo */
+    --bg-card: #111111;       /* Cinza quase preto para cards */
+    --bg-input: #1a1a1a;      /* Cinza escuro para campos */
+    --tech-green: #16f529;    /* Verde Neon vibrante da logo */
+    --tech-green-dim: #0a7e16;/* Verde neon suavizado */
+    --text-main: #ffffff;     /* Texto branco */
+    --text-muted: #94a3b8;    /* Texto cinza para descrições */
+    --border: #2a2a2a;        /* Bordas sutis */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-deep);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Adiciona a textura topográfica sutil ao fundo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMxYjFiMWIiIGZpbGwtb3BhY2l0eT0iMC4yIj48cGF0aCBkPSJNMCAwaDR2NEgwVjB6bTQgNGg0djRINFY0em00IDRoNHY0SDhWOHptNCA0aDR2NEgxMlYxMnptNCA0aDR2NEgxNnY0em00IDRoNHY0SDIwVjIwem00IDRoNHY0SDI0VjI0em00IDRoNHY0SDI4VjI4em00IDRoNHY0SDMyVjMyeW00IDRoNHY0SDM2VjM2ek0wIDQwSDR2NEgwVjQwem00LTRoNHY0SDRWMzZ6bTQtNGg0djRGOFYzMnpNMTIgMjhoNHY0SDEyVjI4em00LTRoNHY0SDE2VjI0em00LTRoNHY0SDIwVjIwem00LTRoNHY0SDI0VjE2em00LTRoNHY0SDI4VjEweW00LTRoNHY0SDMyVjZ6bTQtNGg0djRMMzYgMnoiLz48L2c+PC9nPjwvc3ZnPg==');
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* ==========================================
+   HEADER (Estilo Corporativo Techub)
+   ========================================== */
+header {
+    width: 100%;
+    padding: 2.5rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(17,17,17,1) 0%, rgba(5,5,5,1) 100%);
+    position: relative;
+}
+
+/* Referência à linha verde geométrica da logo */
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -1px; left: 50%;
+    transform: translateX(-50%);
+    width: 150px; height: 3px;
+    background-color: var(--tech-green);
+    box-shadow: 0 0 15px var(--tech-green);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+}
+
+header h1 span { color: var(--tech-green); } /* Destaque na logo-text */
+
+header p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   PAINEL DE BUSCA (Intuitive & Corporativo)
+   ========================================== */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 2rem 0;
+    padding-bottom: 3rem;
+}
+
+.search-panel {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.search-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .search-grid { grid-template-columns: 1fr; }
+}
+
+/* Estilização dos Grupos de Input */
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.form-group label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estilo comum para Select e Input */
+.tech-input {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--bg-input);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Efeito de Foco Techub */
+.tech-input:focus {
+    border-color: var(--tech-green);
+    box-shadow: 0 0 10px rgba(22, 245, 41, 0.2);
+}
+
+/* Customização sutil do Select */
+select.tech-input {
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.3c0%204.9%201.8%209.2%205.4%2012.8l128.1%20128.1c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095.1c3.6-3.6%205.4-7.8%205.4-12.8%200-5-1.8-9.3-5.4-12.9z%22%3E%3C/path%20%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 20px top 50%;
+    background-size: 12px auto;
+    cursor: pointer;
+}
+
+/* Botão Principal Techub */
+.btn-tech {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--tech-green);
+    color: #000000; /* Texto preto para alto contraste no verde neon */
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(22, 245, 41, 0.3);
+}
+
+.btn-tech:hover {
+    background-color: #ffffff; /* Vira branco no hover para destaque */
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-tech:disabled {
+    background-color: var(--border);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* ==========================================
+   ÁREA DE RESULTADOS (Grid Moderna)
+   ========================================== */
+#resultado {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (max-width: 400px) {
+    #resultado { grid-template-columns: 1fr; }
+}
+
+/* Card de Erro Techub */
+.card {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(22, 245, 41, 0.4);
+}
+
+/* Indicador de marca sutil no topo do card */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background-color: var(--border);
+    transition: background-color 0.3s ease;
+}
+.card:hover::before { background-color: var(--tech-green); }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
+
+.card .marca {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    background-color: #1a1a1a;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.card .codigo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--tech-green);
+    text-shadow: 0 0 10px rgba(22, 245, 41, 0.4);
+}
+
+.card strong { color: #ffffff; display: block; margin-bottom: 0.5rem; font-size: 1.1rem;}
+
+.card p.descricao {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.solucao-titulo {
+    font-weight: 700;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Ícone de check sutil antes da solução */
+.solucao-titulo::before {
+    content: "✓";
+    color: var(--tech-green);
+    font-weight: 900;
+}
+
+.card ul {
+    padding-left: 1rem;
+    margin-top: 0.8rem;
+    list-style-type: none;
+}
+
+.card li {
+    margin-bottom: 0.8rem;
+    color: #f1f1f1;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+/* Bulletpoint customizado Techub */
+.card li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 10px;
+    width: 6px; height: 6px;
+    background-color: var(--tech-green-dim);
+    border-radius: 50%;
+}
+
+/* ==========================================
+   UI ELEMENTS (Loader, Mensagens)
+   ========================================== */
+.loader {
+    text-align: center;
+    display: none;
+    margin-top: 3rem;
+    font-weight: bold;
+    color: var(--tech-green);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; text-shadow: 0 0 15px var(--tech-green); }
+    100% { opacity: 0.5; }
+}
+
+.mensagem {
+    grid-column: 1 / -1; /* Ocupa toda a largura do grid */
+    text-align: center;
+    background-color: var(--bg-card);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.mensagem strong { color: var(--text-main); }
+.mensagem-erro { border-color: #ef4444; color: #ef4444; }
